@@ -1,0 +1,15 @@
+public String Average(@RequestBody Long ItemID) {
+		List<Object[]> Averag1 = getMyDao().Averag1(ItemID1);
+		List<Object[]> Averag2 = getMyDao().Averag2(ItemID2);
+		String x = String.valueOf(Averag1.get(0));
+		String y = String.valueOf(Averag2.get(0));
+		float subtract;
+		if (!(x.equals("null"))) {
+			subtract = Float.parseFloat(y) - Float.parseFloat(x);
+		} else {
+			subtract = Float.parseFloat(y);
+		}
+		BigDecimal Subtract = new BigDecimal(subtract + "");
+		Subtract = Subtract.setScale(1, BigDecimal.ROUND_HALF_EVEN);
+		return Subtract + "";
+	}
